@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     MAX_ROBOTS: int
 
     ROBOT_COST: float
-    ROBOT_FOO_COST: float
+    ROBOT_FOO_COST: int
 
     ROBOT_MINING_FOO_DURATION: float
     ROBOT_MINING_BAR_DURATION_MIN: float

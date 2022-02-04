@@ -12,6 +12,7 @@ python-dotenv = "*"
 black = "*"
 pytest = "*"
 coverage = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.9"

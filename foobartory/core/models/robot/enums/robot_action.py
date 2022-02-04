@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class RobotActivity(str, Enum):
+class RobotActivity(Enum):
     MINING_FOO = "mining foo"
     MINING_BAR = "mining bar"
     ASSEMBLING_FOOBAR = "assembling foobar"
