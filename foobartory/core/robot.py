@@ -139,7 +139,7 @@ class Robot(Thread):
         Returns if the robot can sell foobars
         :return: if we can sell foobars
         """
-        return len(self.warehouse.foobars) > 0
+        return len(self.warehouse.foobars) > settings.ROBOT_SELLING_FOOBARS_MIN
 
     def get_foobars_to_sell(self) -> List[FooBar]:
         """

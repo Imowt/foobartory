@@ -380,7 +380,7 @@ class TestRobot:
         Test the can_sell_foobars method
         :return:
         """
-        assert self.robot.can_sell_foobars() == (len(self.robot.warehouse.foobars) > 0)
+        assert self.robot.can_sell_foobars() == (len(self.robot.warehouse.foobars) > settings.ROBOT_SELLING_FOOBARS_MIN)
 
     def test_get_foobars_to_sell_one_foobar(self):
         """

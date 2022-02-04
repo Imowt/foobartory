@@ -26,7 +26,7 @@ It was very original and cool subject to work on
 
 In the root directory:
 ```
-docker-compose up
+docker-compose up --build
 ```
 
 ### Using foobartory/main.py
@@ -50,9 +50,11 @@ python -m foobartory.main
 
 All the method are tested, you can find the tests in the `tests` folder
 
+#### Run
+
 **You first need to setup your pipenv environment**
 
-Then you can run:
+Then in the root directory you can run:
 ```
 coverage run -m pytest
 coverage report
@@ -61,5 +63,4 @@ coverage report
 ## .env
 
 All the subject variables can be found and modified in the .env file
-
 
