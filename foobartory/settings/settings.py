@@ -46,7 +46,7 @@ class Settings(BaseSettings):
             values.get("ROBOT_SELLING_FOOBARS_MIN"), values.get("ROBOT_SELLING_FOOBARS_MAX")
         )
         for key, value in values.items():
-            if (type(value) is int or type(value) is float) and value < 0:
+            if (type(value) is int or type(value) is float) and value < 0.1:
                 raise ValueError(f"{key}: has to be positive")
         return values
 

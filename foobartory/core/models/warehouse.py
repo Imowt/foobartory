@@ -14,7 +14,6 @@ class Warehouse(BaseModel):
     """
     Object containing all the datas that has to be shared between the Factory and the Robots
     """
-
     balance: float = 0
     robots: List["Robot"] = []
     bars: List[Bar] = []

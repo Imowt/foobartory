@@ -24,7 +24,7 @@ class Robot(Thread):
 
     def run(self) -> None:
         """
-        Starts the robot thread
+        Robot thread robot entrypoint
         :return:
         """
         while not self.stop_event.is_set():

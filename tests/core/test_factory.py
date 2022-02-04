@@ -1,7 +1,7 @@
-from unittest.mock import Mock, MagicMock
+from unittest.mock import Mock
 
 from foobartory.core.factory import Factory
-from foobartory.settings.settings import settings, Settings
+from foobartory.settings.settings import settings
 
 
 class TestFactory:
@@ -67,7 +67,10 @@ class TestFactory:
         self.factory.stop_event.is_set = stop_event_is_set_mock
 
         print_state_mock: Mock = mocker.patch.object(Factory, "print_state")
+
+        sleep_mock: Mock = mocker.patch('foobartory.core.factory.time.sleep')
         self.factory.print_state_monitoring()
 
         stop_event_is_set_mock.assert_called_with()
         print_state_mock.assert_called_once_with()
+        sleep_mock.assert_called_once_with(settings.MONITORING_REFRESH_RATE * settings.TIME_RATIO)

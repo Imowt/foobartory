@@ -1,9 +1,9 @@
 import time
 from threading import Thread, Event
 
+from foobartory.core.models.warehouse import Warehouse
 from foobartory.core.robot import Robot
 from foobartory.settings.settings import settings
-from foobartory.core.models.warehouse import Warehouse
 
 
 class Factory:
@@ -49,12 +49,13 @@ class Factory:
         print(f"foos: {len(self.warehouse.foos)}")
         print(f"bars: {len(self.warehouse.bars)}")
         print(f"finished: {self.stop_event.is_set()}")
-        time.sleep(settings.MONITORING_REFRESH_RATE * settings.TIME_RATIO)
 
     def print_state_monitoring(self) -> None:
         """
-        Entrypoint of self.monitoring_thread print the current state
+        Entrypoint of self.monitoring_thread, it prints the current state
         :return:
         """
         while not self.stop_event.is_set():
             self.print_state()
+            time.sleep(settings.MONITORING_REFRESH_RATE * settings.TIME_RATIO)
+
